@@ -2,39 +2,25 @@
 <html lang="en">
 
 
-<!-- Mirrored from modinatheme.com/html/DigiNow-html/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Nov 2024 11:54:29 GMT -->
 <head>
-    <!-- ========== Meta Tags ========== -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="modinatheme">
-    <!-- ======== Page title ============ -->
     <title>DigiNow - IT Service & Technology Company</title>
-    <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="assets/img/favicon.png">
-    <!-- ===========  All Stylesheet ================= -->
-    <!--  Icon css plugins -->
     <link rel="stylesheet" href="assets/css/icons.css">
-    <!--  animate css plugins -->
     <link rel="stylesheet" href="assets/css/animate.css">
-    <!--  slick css plugins -->
     <link rel="stylesheet" href="assets/css/slick.css">
-    <!--  magnific-popup css plugins -->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!-- metis menu css file -->
     <link rel="stylesheet" href="assets/css/metismenu.css">
-    <!--  Bootstrap css plugins -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!--  main style css file -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- template main style css file -->
     <link rel="stylesheet" href="style.css">
     
 </head>
 
 <body class="body-wrapper">    
-    <!-- preloader -->
     <div id="preloader" class="preloader">
         <div class="animation-preloader">
             <div class="spinner">                
@@ -916,11 +902,7 @@
 </body>
 
 
-<!-- Mirrored from modinatheme.com/html/DigiNow-html/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Nov 2024 11:54:52 GMT -->
 </html>
-
-    <!--  ALl JS Plugins
-    ====================================== -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/modernizr.min.js"></script>
     <script src="assets/js/jquery.easing.js"></script>
@@ -935,6 +917,19 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/metismenu.js"></script>
     <script src="assets/js/active.js"></script>
+
+    <script>
+        window.onscroll = function() {
+            var topBar = document.querySelector('.top-bar-wrapper');
+            var header = document.querySelector('header.transparent-menu');
+
+            if (window.pageYOffset > 0) {
+                topBar.style.display = 'none'; // Hide the top bar when scrolling down
+            } else {
+                topBar.style.display = 'flex'; // Show the top bar when at the top
+            }
+        };
+    </script>
 </body>
 
 </html>

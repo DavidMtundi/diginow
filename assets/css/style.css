@@ -3567,6 +3567,7 @@ header.header-3 .main-menu ul > li > ul ul {
   padding: 10px 0px;
   position: relative;
   overflow: hidden;
+  z-index: 4;
 }
 
 .top-bar-wrapper::before {
