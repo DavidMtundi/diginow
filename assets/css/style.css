@@ -3192,6 +3192,7 @@ header.transparent-menu {
   z-index: 3;
   width: 100%;
   border-bottom: 1px solid rgba(178, 168, 205, 0.2);
+  height: 200px;
 }
 
 header.transparent-menu ul li a {
@@ -3200,6 +3201,7 @@ header.transparent-menu ul li a {
 
 header.transparent-menu.sticky {
   background: #5f2dee;
+  /*height: 150px;*/
 }
 
 header .header-right-element .theme-btn i {
