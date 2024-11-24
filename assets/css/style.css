@@ -3192,7 +3192,7 @@ header.transparent-menu {
   z-index: 3;
   width: 100%;
   border-bottom: 1px solid rgba(178, 168, 205, 0.2);
-  height: 200px;
+  height: 150px;
 }
 
 header.transparent-menu ul li a {
