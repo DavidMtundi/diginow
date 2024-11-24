@@ -1,8 +1,6 @@
 /*
 Template: DigiNow
 Author: Modina Theme
-Author URI: https://themeforest.net/user/modinatheme/
-Description: IT Solution & Technology HTML  Template
 Version: 1.2.0
 */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&amp;family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap");
@@ -3194,6 +3192,7 @@ header.transparent-menu {
   z-index: 3;
   width: 100%;
   border-bottom: 1px solid rgba(178, 168, 205, 0.2);
+  height: 150px;
 }
 
 header.transparent-menu ul li a {
@@ -3202,10 +3201,13 @@ header.transparent-menu ul li a {
 
 header.transparent-menu.sticky {
   background: #5f2dee;
+  /*height: 150px;*/
 }
 
 header .header-right-element .theme-btn i {
-  margin-left: 4px;
+  display: flex;
+  align-items: center;
+  white-space: nowraps;
 }
 
 header .header-right-element .search-btn {
@@ -3565,6 +3567,7 @@ header.header-3 .main-menu ul > li > ul ul {
   padding: 10px 0px;
   position: relative;
   overflow: hidden;
+  z-index: 4;
 }
 
 .top-bar-wrapper::before {
