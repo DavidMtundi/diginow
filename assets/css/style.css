@@ -3205,7 +3205,9 @@ header.transparent-menu.sticky {
 }
 
 header .header-right-element .theme-btn i {
-  margin-left: 4px;
+  display: flex;
+  align-items: center;
+  white-space: nowraps;
 }
 
 header .header-right-element .search-btn {
