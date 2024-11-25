@@ -9241,6 +9241,11 @@ footer .footer-bottom .social-links a:last-of-type {
   margin-top: 25px;
 }
 
+.logo-small {
+  width: 150px;
+  height: auto;
+}
+
 .footer-social-icon a {
   display: inline-block;
   width: 40px;
