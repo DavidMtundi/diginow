@@ -5887,7 +5887,7 @@ header.header-3 .main-menu ul > li > ul ul {
 }
 
 .single-customer-review .client-info-card .client-details {
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
 @media (max-width: 767px) {
