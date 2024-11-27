@@ -9226,7 +9226,9 @@ footer .footer-bottom .social-links a:last-of-type {
 }
 
 .about-DigiNow {
-  margin-top: 40px;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .about-DigiNow a {
@@ -9234,7 +9236,7 @@ footer .footer-bottom .social-links a:last-of-type {
 }
 
 .about-DigiNow p {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .footer-social-icon {
