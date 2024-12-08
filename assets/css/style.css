@@ -3077,6 +3077,24 @@ header.header-1.sticky .theme-btn {
     padding: 15px 0px;
   }
 }
+.logo-img {
+  max-height: 120px; /* Default max height */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Medium screens */
+@media (max-width: 768px) {
+  .logo-img {
+      max-height: 100px; /* Adjust max height for medium screens */
+  }
+}
+
+/* Small screens */
+@media (max-width: 576px) {
+  .logo-img {
+      max-height: 70px; /* Adjust max height for small screens */
+  }
+}
 
 header.header-1 .logo a {
   display: block;
@@ -3185,6 +3203,10 @@ header .logo_text {
   line-height: 1;
 }
 
+.logo-img{
+  max-height: 80px;
+  width: auto;
+}
 header.transparent-menu {
   background: transparent;
   position: absolute;
@@ -3192,7 +3214,6 @@ header.transparent-menu {
   z-index: 3;
   width: 100%;
   border-bottom: 1px solid rgba(178, 168, 205, 0.2);
-  height: 150px;
 }
 
 header.transparent-menu ul li a {
