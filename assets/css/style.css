@@ -8078,6 +8078,11 @@ footer .footer-bottom .social-links a:last-of-type {
   height: auto;
 }
 
+.logo-small-bottom{
+  width: 120px;
+  height: auto;
+}
+
 .footer-social-icon a {
   display: inline-block;
   width: 40px;
