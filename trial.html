@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open for Business Carousel</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Mori, sans-serif; /* Add a fallback font */
+            background: #111;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .gallery {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .cards {
+            position: absolute;
+            width: 14rem;
+            height: 18rem;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .cards li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 14rem;
+            height: 18rem;
+            text-align: center;
+            line-height: 18rem;
+            font-size: 2rem;
+            background-color: #9d7cce;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 0.8rem;
+            color: #fff; /* Added to make the numbers visible */
+        }
+
+        .actions {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        button {
+            display: inline-block;
+            outline: none;
+            border: none;
+            padding: 8px 14px;
+            background: #414141;
+            background-image: -webkit-linear-gradient(top, #575757, #414141);
+            background-image: -moz-linear-gradient(top, #575757, #414141);
+            background-image: -ms-linear-gradient(top, #575757, #414141);
+            background-image: -o-linear-gradient(top, #575757, #414141);
+            background-image: linear-gradient(to bottom, #575757, #414141);
+            text-shadow: 0px 1px 0px #414141;
+            -webkit-box-shadow: 0px 1px 0px 414141;
+            -moz-box-shadow: 0px 1px 0px 414141;
+            box-shadow: 0px 1px 0px 414141;
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 auto 10px;
+            -webkit-border-radius: 4;
+            -moz-border-radius: 4;
+            border-radius: 4px;
+            padding: 12px 25px;
+            font-family: Mori, sans-serif; /* Add a fallback font */
+            font-weight: 400;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 20px;
+            line-height: 18px;
+        }
+
+        button:hover {
+            background: #57a818;
+            background-image: -webkit-linear-gradient(top, #57a818, #4d9916);
+            background-image: -moz-linear-gradient(top, #57a818, #4d9916);
+            background-image: -ms-linear-gradient(top, #57a818, #4d9916);
+            background-image: -o-linear-gradient(top, #57a818, #4d9916);
+            background-image: linear-gradient(to bottom, #57a818, #4d9916);
+            text-shadow: 0px 1px 0px #32610e;
+            -webkit-box-shadow: 0px 1px 0px fefefe;
+            -moz-box-shadow: 0px 1px 0px fefefe;
+            box-shadow: 0px 1px 0px fefefe;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        a {
+            color: #88ce02;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <ul class="cards">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+        </ul>
+        <div class="actions">
+            <button class="prev">Prev</button>
+            <button class="next">Next</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        let iteration = 0;
+
+        const spacing = 0.1,
+            snap = gsap.utils.snap(spacing),
+            cards = gsap.utils.toArray('.cards li'),
+            seamlessLoop = buildSeamlessLoop(cards, spacing),
+            scrub = gsap.to(seamlessLoop, {
+                totalTime: 0,
+                duration: 0.5,
+                ease: "power3",
+                paused: true
+            }),
+            trigger = ScrollTrigger.create({
+                start: 0,
+                onUpdate(self) {
+                    if (self.progress === 1 && self.direction > 0 && !self.wrapping) {
+                        wrapForward(self);
+                    } else if (self.progress < 1e-5 && self.direction < 0 && !self.wrapping) {
+                        wrapBackward(self);
+                    } else {
+                        scrub.vars.totalTime = snap((iteration + self.progress) * seamlessLoop.duration());
+                        scrub.invalidate().restart();
+                        self.wrapping = false;
+                    }
+                },
+                end: "+=3000",
+                pin: ".gallery"
+            });
+
+        function wrapForward(trigger) {
+            iteration++;
+            trigger.wrapping = true;
+            trigger.scroll(trigger.start + 1);
+        }
+
+        function wrapBackward(trigger) {
+            iteration--;
+            if (iteration < 0) {
+                iteration = 9;
+                seamlessLoop.totalTime(seamlessLoop.totalTime() + seamlessLoop.duration() * 10);
+                scrub.pause();
+            }
+            trigger.wrapping = true;
+            trigger.scroll(trigger.end - 1);
+        }
+
+        function scrubTo(totalTime) {
+            let progress = (totalTime - seamlessLoop.duration() * iteration) / seamlessLoop.duration();
+            if (progress > 1) {
+                wrapForward(trigger);
+            } else if (progress < 0) {
+                wrapBackward(trigger);
+            } else {
+                trigger.scroll(trigger.start + progress * (trigger.end - trigger.start));
+            }
+        }
+
+        document.querySelector(".next").addEventListener("click", () => scrubTo(scrub.vars.totalTime + spacing));
