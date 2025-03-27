@@ -1329,6 +1329,9 @@ p {
       display: block; /* Ensure the submenu shows when the parent is clicked or active */
   }
 }
+.mobile-nav li.active > .sub-menu{
+  display: block;
+}
 
 
 .navbar-brand {
@@ -7401,6 +7404,14 @@ p.sticky-label {
   .comment-form textarea {
     height: 120px;
   }
+}
+
+.sub-menu {
+  display: none; /* Hide sub-menu by default */
+}
+
+.sub-menu.show {
+  display: block; /* Show sub-menu when toggled */
 }
 
 .comment-form .submit-btn {
