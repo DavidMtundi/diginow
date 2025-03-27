@@ -1320,6 +1320,19 @@ p {
     opacity: 0;
   }
 }
+.navbar {
+  overflow: visible;
+}
+
+@media (max-width: 768px) {
+  .mobile-nav li.active > .sub-menu {
+      display: block; /* Ensure the submenu shows when the parent is clicked or active */
+  }
+}
+.mobile-nav li.active > .sub-menu{
+  display: block;
+}
+
 
 .navbar-brand {
   padding: 0;
@@ -3893,6 +3906,7 @@ header.header-3 .main-menu ul > li > ul ul {
   height: 100vh;
   scroll-behavior: smooth;
   overflow-y: scroll;
+  overflow: visible;
   -webkit-transition: right .5s ease-in;
   transition: right .5s ease-in;
   background-color: #256ad7;
@@ -3901,6 +3915,19 @@ header.header-3 .main-menu ul > li > ul ul {
   -webkit-box-shadow: 0 13px 35px -12px rgba(35, 35, 35, 0.15);
           box-shadow: 0 13px 35px -12px rgba(35, 35, 35, 0.15);
   /* Vertical Menu Style */
+}
+
+@media (max-width: 768px) {
+  .mobile-nav .sub-menu {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      z-index: 9999999999;
+  }
+}
+
+.sub-menu {
+  z-index: 999; /* Ensure the submenu appears on top */
 }
 
 .mobile-nav.show {
@@ -7379,6 +7406,14 @@ p.sticky-label {
   }
 }
 
+.sub-menu {
+  display: none; /* Hide sub-menu by default */
+}
+
+.sub-menu.show {
+  display: block; /* Show sub-menu when toggled */
+}
+
 .comment-form .submit-btn {
   display: inline-block;
   background-color:  #0033A0;
@@ -7911,6 +7946,11 @@ footer ul {
 
 footer ul li {
   list-style: none;
+}
+
+footer .footer-widgets-wrapper-small{
+  padding: 80px 0px 120px;
+  padding-top: 50;
 }
 
 footer .footer-widgets-wrapper {
