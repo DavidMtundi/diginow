@@ -3884,6 +3884,20 @@ header.header-3 .main-menu ul > li > ul ul {
   font-family: "Font Awesome 5 Pro";
   font-size: 14px;
 }
+.mobile-nav.show {
+  right: 0px;
+}
+
+.mobile-nav .close-nav {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 20px;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
 
 .mobile-nav {
   position: fixed;
