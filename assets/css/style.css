@@ -1320,19 +1320,6 @@ p {
     opacity: 0;
   }
 }
-.navbar {
-  overflow: visible;
-}
-
-@media (max-width: 768px) {
-  .mobile-nav li.active > .sub-menu {
-      display: block; /* Ensure the submenu shows when the parent is clicked or active */
-  }
-}
-.mobile-nav li.active > .sub-menu{
-  display: block;
-}
-
 
 .navbar-brand {
   padding: 0;
@@ -3897,6 +3884,20 @@ header.header-3 .main-menu ul > li > ul ul {
   font-family: "Font Awesome 5 Pro";
   font-size: 14px;
 }
+.mobile-nav.show {
+  right: 0px;
+}
+
+.mobile-nav .close-nav {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 20px;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
 
 .mobile-nav {
   position: fixed;
@@ -3915,34 +3916,6 @@ header.header-3 .main-menu ul > li > ul ul {
   -webkit-box-shadow: 0 13px 35px -12px rgba(35, 35, 35, 0.15);
           box-shadow: 0 13px 35px -12px rgba(35, 35, 35, 0.15);
   /* Vertical Menu Style */
-}
-
-@media (max-width: 768px) {
-  .mobile-nav .sub-menu {
-      position: absolute;
-      left: 0;
-      top: 100%;
-      z-index: 9999999999;
-  }
-}
-
-.sub-menu {
-  z-index: 999; /* Ensure the submenu appears on top */
-}
-
-.mobile-nav.show {
-  right: 0px;
-}
-
-.mobile-nav .close-nav {
-  border: 0;
-  background: transparent;
-  color: #fff;
-  border-radius: 30px;
-  font-size: 20px;
-  position: absolute;
-  left: 20px;
-  top: 10px;
 }
 
 .mobile-nav .sidebar-nav {
@@ -7404,14 +7377,6 @@ p.sticky-label {
   .comment-form textarea {
     height: 120px;
   }
-}
-
-.sub-menu {
-  display: none; /* Hide sub-menu by default */
-}
-
-.sub-menu.show {
-  display: block; /* Show sub-menu when toggled */
 }
 
 .comment-form .submit-btn {
